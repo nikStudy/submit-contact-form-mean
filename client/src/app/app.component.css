@@ -1,0 +1,15 @@
+input.ng-invalid.ng-touched {
+    border-color: red;
+}
+
+div.container {
+    height: 540px;
+    width: 50%;
+}
+
+/* Set height to 'auto' for smaller screen sizes */
+@media screen and (max-width: 576px) {
+    div.container {
+        height: auto;
+    }    
+}

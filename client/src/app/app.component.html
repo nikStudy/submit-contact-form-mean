@@ -1,0 +1,27 @@
+<div class="container mt-5">
+  
+  <h2>Contact Us</h2><br>
+
+  <form [formGroup]='contactForm'>
+    <div *ngIf="datasaved" class="alert alert-success">
+      {{ message }}<br>
+    </div>
+
+    <div class="form-group">
+      <input type="email" class="form-control" placeholder="Email ID" formControlName="email">
+      <span class="font-italic" *ngIf = "contactForm.controls['email'].touched && contactForm.controls['email'].hasError('required')">Email address is required</span>
+      <span class="font-italic" *ngIf = "contactForm.controls['email'].hasError('email')">Please enter valid email address</span>
+    </div>
+
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Subject" formControlName="subject">
+    </div>
+
+    <div class="form-group">
+      <textarea class="form-control" rows="3" placeholder="Message" formControlName="mssg"></textarea>
+    </div>
+    <!-- <button type="submit" class="btn btn-primary" [disabled]="signUpForm.invalid">Register</button> -->
+    <button type="submit" class="btn btn-success" [disabled]="contactForm.invalid" (click)="postdata()">Send</button>
+  </form>
+  <br>
+</div>
